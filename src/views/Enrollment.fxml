@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="15" alignment="TOP_CENTER" xmlns="http://javafx.com/javafx/17" 
+      xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="controllers.EnrollmentController">
+    
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+    
+  
+    <Label text="Student Course Enrollment System" 
+           style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+    
+ 
+    <GridPane hgap="10" vgap="10" alignment="CENTER">
+        <Label text="Student ID:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="studentsComboBox" GridPane.rowIndex="0" GridPane.columnIndex="1" prefWidth="200"/>
+        
+        <Label text="Course ID:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="coursesComboBox" GridPane.rowIndex="1" GridPane.columnIndex="1" prefWidth="200"/>
+        
+        <Label text="Enrollment Date:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <DatePicker fx:id="enrollmentDate" GridPane.rowIndex="2" GridPane.columnIndex="1" prefWidth="200"/>
+    </GridPane>
+    
+  
+    <HBox spacing="15" alignment="CENTER">
+        <Button text="Enroll" onAction="#enrollHandle" 
+                style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 16;"/>
+        <Button text="Update" onAction="#updateHandle" 
+                style="-fx-background-color: #2980b9; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 16;"/>
+        <Button text="Delete" onAction="#deleteHandle" 
+                style="-fx-background-color: #c0392b; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 16;"/>
+        <Button text="View All" onAction="#viewHandle" 
+                style="-fx-background-color: #8e44ad; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 16;"/>
+    </HBox>
+    
+
+    <TableView fx:id="table" prefHeight="400">
+        <columns>
+            <TableColumn fx:id="enrollmentIdTC" text="Enrollment ID" prefWidth="80"/>
+            <TableColumn fx:id="studentIdTC" text="Student ID" prefWidth="80"/>
+            <TableColumn fx:id="studentNameTC" text="Student Name" prefWidth="150"/>
+            <TableColumn fx:id="courseIdTC" text="Course ID" prefWidth="80"/>
+            <TableColumn fx:id="courseNameTC" text="Course Name" prefWidth="150"/>
+            <TableColumn fx:id="enrollmentDateTC" text="Enrollment Date" prefWidth="120"/>
+        </columns>
+    </TableView>
+    
+</VBox>
